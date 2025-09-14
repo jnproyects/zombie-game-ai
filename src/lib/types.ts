@@ -2,8 +2,8 @@ export interface GameMessage {
     id: string;
     role: 'user' | 'assistant';
     content: string;
-    image?: string;
-    imageLoading?: string;
+    image?: GeneratedImage;
+    imageLoading?: boolean;
 }
 
 export interface GeneratedImage {
@@ -23,7 +23,11 @@ export interface GenerateStoryRequest {
     isStart: boolean;
 }
 
+export interface GenerateImageRequest {
+    imagePrompt: string;
+}
+
 export interface GenerateStoryResponse {
     narrative: string;
-    imagePrompt: GeneratedImage;
+    imagePrompt: string;
 }
